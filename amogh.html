@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Web Page</title>
+<style>
+.hover-effect {
+background-color: lightblue;
+transition: background-color 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+background-color: skyblue;
+}
+
+.error-message {
+color: red;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>Welcome to My Web Page</h1>
+
+<label for="input">Enter your choice:</label>
+<input type="text" id="input">
+<button onclick="validateInput()">Submit</button>
+<p id="error-message" class="error-message"></p>
+
+<footer>
+<p>© 2023 My Web Page. All rights reserved.</p>
+</footer>
+
+<script>
+function validateInput() {
+var input = document.getElementById("input").value;
+var errorMessage = document.getElementById("error-message");
+
+if (input === "MY DOCS" || input === "MY SHEETS" || input === "MY BLOG" || input === "MY PRESENTATION") {
+errorMessage.textContent = "";
+// Redirect to Google Docs based on the input
+switch (input) {
+case "MY DOCS":
+window.location.href = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_P_lPkLRstAXelw7t3yR2ERuXpAtvuLQZ-LIlX0XJ69f3__DvAVmI8FKHKLpZBt3GhEYmj59QbHC/pubhtml";
+break;
+
+
+case "MY SHEETS":window.location.href = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_P_lPkLRstAXelw7t3yR2ERuXpAtvuLQZ-LIlX0XJ69f3__DvAVmI8FKHKLpZBt3GhEYmj59QbHC/pubhtml";
+break;
+case "MY BLOG":
+window.location.href = "https://www.blogger.com/blog/post/edit/1255517579540691177/8620250885579656644";
+break;
+case "MY PRESENTATION":
+window.location.href = "https://docs.google.com/presentation/d/1rUHI9Lwh2PelMkkX2YbKpxZTp-KZHsGZUaFUXjiLJ7c/edit#slide=id.p";
+break;
+}
+} else {
+errorMessage.textContent = "Invalid input. Please enter 'MY DOCS', 'MY SHEETS', 'MY BLOG', or 'MY PRESENTATION'.";
+}
+}
+</script>
+</body>
+</html>
